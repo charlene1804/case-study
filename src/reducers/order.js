@@ -7,7 +7,7 @@ const reducer = (oldState = initialState, action) => {
     case "UPDATE_ORDER":
       return {
         ...oldState,
-        order: action.payload.order,
+        order: action.payload.cart,
       };
     default:
       return { ...oldState };

@@ -3,7 +3,7 @@ export const checkVATCategories = (cart) => {
   let VATCategories = [];
 
   // I map the content of my cart to check the VAT category and amount for each article in the cart
-  cart.map((element) => {
+  cart?.map((element) => {
     const newCategory = {};
 
     // In all cases we check that vat_category isn't equal to 0
@@ -54,6 +54,8 @@ export const checkVATCategories = (cart) => {
 
       return 0;
     });
+
+    return console.log("");
   });
 
   // Finally, I return the JSX

@@ -1,6 +1,6 @@
 // Imports
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 // Components import
 import Products from "./Products";
@@ -10,6 +10,9 @@ import Order from "./Order";
 function App() {
   return (
     <div className="App">
+      <Route exact path="/">
+        <Redirect to="/products" />
+      </Route>
       <Route exact path="/products">
         <Products />
       </Route>

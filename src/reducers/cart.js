@@ -20,11 +20,25 @@ const reducer = (oldState = initialState, action) => {
 
         newCart.push(article);
       }
-
       return {
         ...oldState,
         cart: newCart,
       };
+
+    case "EMPTY_CART":
+      const newEmptyCart = [];
+
+      return {
+        ...oldState,
+        cart: newEmptyCart,
+      };
+
+    case "UPDATE_CART":
+      return {
+        ...oldState,
+        cart: action.payload.cart,
+      };
+
     default:
       return { ...oldState };
   }

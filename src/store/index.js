@@ -7,10 +7,11 @@ import rootReducer from "../reducers";
 
 // middlewares
 import productsMiddleware from "../middlewares/products";
+import orderMiddleware from "../middlewares/order";
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(productsMiddleware))
+  composeWithDevTools(applyMiddleware(productsMiddleware, orderMiddleware))
 );
 
 export default store;
